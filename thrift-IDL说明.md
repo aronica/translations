@@ -132,7 +132,7 @@ requiredness 规则如下：
   - Default values：总是写入
 
 如果一个required field在读的过程中缺失，期望的行为是反馈给调用者读取操作不成功，例如：抛出一个exception或者返回一个error。
-正因为这个约定存在，required fields彻底地限定了soft versioning的极限。因为的读取的时候field必须存在，所以改field永远不能被设置为过期。如果一个required field被移除，或者修改为optional，不同版本之间的数据就不在兼容。
+正因为这个约定存在，required fields彻底地限定了soft versioning的极限。读取的时候field必须存在，所以该field永远不能被设置为过期。如果一个required field被移除，或者修改为optional，不同版本之间的数据就不再兼容。
 + optional
   - Write: Optional field 只有在他们被设置了之后才会写入。
   - Read：Optional field 可以是，也可以不是输入流的一部分。
